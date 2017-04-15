@@ -35,7 +35,7 @@ public class Controller {
         return result;
     }
 
-    @RequestMapping("/create")
+    @RequestMapping(value = "/create", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     public String create( @RequestParam Map<String,String> requestParams ) throws Exception
     {
         Person p = new Person();
@@ -50,7 +50,7 @@ public class Controller {
         return Integer.toString(personRepository.findAll().size());
     }
 
-    @RequestMapping("/loop")
+    @RequestMapping(value = "/loop", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     public String loop()
     {
 
@@ -67,11 +67,13 @@ public class Controller {
         return Integer.toString(personRepository.findAll().size());
     }
 
-    @RequestMapping("/size")
+    @RequestMapping(value = "/size", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     public String size()
     {
         return Integer.toString(personRepository.findAll().size());
     }
+
+
 
 
 }
